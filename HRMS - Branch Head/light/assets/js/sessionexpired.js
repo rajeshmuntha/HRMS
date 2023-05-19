@@ -19,7 +19,7 @@
             $("#spanTimeLeft").html(timeLeft);
             if (secondTick > timeInSecondsAfterSessionOut) {
                 clearTimeout(tick);
-                window.location = "page-timeout.html";
+                window.location = "e3-page-timeout.html";
                 return;
             }
             tick = setTimeout("StartThisSessionTimer()", 1000);
