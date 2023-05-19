@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>SPTECHHUB | HRMS In Breif</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="description" content="SPTECHHUB Admin Template">
+<meta name="author" content="SPTECHHUB, design by: sptechhub.com">
+
+<link rel="icon" href="./assets/imgs/favicon.png" type="image/x-icon">
+<!-- VENDOR CSS -->
+<link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../assets/vendor/sweetalert/sweetalert.css"/>
+<link rel="stylesheet" href="../assets/vendor/jquery-datatable/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="../assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+
+<!-- <link type="text/css" rel="stylesheet" href="magiczoomplus/magiczoomplus.css"/> -->
+
+
+<!-- MAIN CSS -->
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/color_skins.css">
+
+<!-- Icons cdn -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800&family=Fredoka:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+<style>
+    *{
+        font-family: 'Poppins', sans-serif;
+        scroll-behavior: smooth;
+    }
+    .grad1 {
+    font-size: 62px;
+    font-family: 'Exo 2', sans-serif;
+    background: -webkit-linear-gradient(#941c1f, #189cdf, #941c1f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* text-shadow: #FC0 1px 0 10px; */
+}
+.para{
+    font-size: 18px;
+    font-family: 'poppins', sans-serif;
+    color: #941c1f;
+}
+@media screen and (min-width: 1268px){
+    .flow{
+    height: 360px;
+    overflow: auto;
+}
+} 
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+</style>
+</head>
+<body class="theme-blue"  onload="onload()">
+
+<!-- Page Loader -->
+<!-- <div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="m-t-30"><img src="../assets/images/logo-icon.png" width="48" height="30" alt="SPTECHHUB"></div>
+        <p>Please wait...</p>        
+    </div>
+</div> -->
+<!-- Overlay For Sidebars -->
+
+<div id="wrapper">
+
+    <nav class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-btn">
+                <button type="button" class="btn-toggle-offcanvas"><i class="lnr lnr-menu fa fa-bars"></i></button>
+            </div>
+
+            <div class="navbar-brand pt-0 mt-0">
+                <a href="emp-attendance2.html"><img src="../assets/images/logo.png" alt="SPTECHHUB LOGO" class="img-responsive logo"></a>                
+            </div>
+            
+            <div class="navbar-right">
+                <form id="navbar-search" class="navbar-form search-form">
+                    <input value="" class="form-control" placeholder="Search here..." type="text">
+                    <button type="button" class="btn btn-default"><i class="icon-magnifier"></i></button>
+                </form>                
+
+                <div id="navbar-menu">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="app-events.html" class="icon-menu d-none d-sm-block d-md-none d-lg-block"><i class="icon-calendar"></i></a>
+                        </li>
+                        <li>
+                            <a href="app-chat.html" class="icon-menu d-none d-sm-block"><i class="icon-bubbles"></i></a>
+                        </li>
+                        <li>
+                            <a href="app-inbox.html" class="icon-menu d-none d-sm-block"><i class="icon-envelope"></i><span class="notification-dot"></span></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+                                <i class="icon-bell"></i>
+                                <span class="notification-dot"></span>
+                            </a>
+                            <ul class="bg-light text-dark text-center dropdown-menu notifications animated shake">
+                                <!-- <li class="header"><strong>You have 4 new Notifications</strong></li> -->
+                                <div>
+                                    <p class="grad1">Coming Soon</p>
+                                    <p class="para">This page is under construction.</p>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown"><i class="icon-equalizer"></i></a>
+                            <ul class="dropdown-menu user-menu menu-icon animated bounceIn">
+                                <li class="menu-heading">SETTINGS</li>
+                                <li class=""><a href="page-profile2.html"><i class="bi bi-person-square"></i> <span>Profile</span></a></li>
+                                <li><a href="page-lockscreen.html"><i class="bi bi-file-lock2"></i> <span>Lock Your Screen</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="page-login.html" class="icon-menu"><i class="icon-login"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+          
+    <!-- Left Side menu bar -->
+    <div id="left-sidebar" class="sidebar">
+        <div class="sidebar-scroll">
+            <div class="user-account">
+                <img src="../assets/images/user.jpeg" class="rounded-circle user-photo" alt="User Profile Picture">
+                <div class="dropdown">
+                    <span>Welcome,</span>
+                    <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>Guest</strong></a>
+                    <ul class="dropdown-menu dropdown-menu-right account animated flipInY">
+                        <li><a href="page-profile2.html"><i class="icon-user"></i>My Profile</a></li>
+                        <li><a href="app-inbox.html"><i class="icon-envelope-open"></i>Messages</a></li>
+                        <li><a href="javascript:void(0);"><i class="icon-settings"></i>Settings</a></li>
+                        <li class="divider"></li>
+                        <li><a href="page-login.html"><i class="icon-power"></i>Logout</a></li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-6">
+                        <span class="text-warning">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </span>
+                        <small>Rating</small>                         
+                    </div>
+                    <div class="col-2">
+                        <span><b>40+</b></span>
+                        <small>Days</small>                        
+                    </div>
+                    <div class="col-4">                        
+                        <span><b>5+</b></span>
+                        <small>Members</small>
+                    </div>
+                </div>
+            </div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#hr_menu"><i class="bi bi-person-check-fill"></i></a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#project_menu">Utilities</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting"><i class="icon-settings"></i></a></li>
+            </ul>
+                
+            <!-- Tab panes -->
+            <div class="tab-content p-l-0 p-r-0">
+                <div class="tab-pane animated fadeIn flow active" id="hr_menu">
+                    <nav class="sidebar-nav">
+                        <ul class="main-menu metismenu pb-4">
+                            <li class=""><a href="welcome.html"><i class="bi bi-book"></i>Welcome's You</a></li>
+                            <li class=""><a href="about-hrms.html"><i class="bi bi-card-checklist"></i>About HRMS</a></li>
+                            <li class="active"><a href="hrms-in-brief.html"><i class="bi bi-images"></i>HRMS in Brief</a></li>
+                            <li class=""><a href="post-feedback.html"><i class="bi bi-pencil-square"></i>Post your Feedback</a></li>
+                            <li class=""><a href="career.html"><i class="bi bi-file-earmark-person"></i>Career</li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="tab-pane animated fadeIn" id="project_menu">
+                    <nav class="sidebar-nav">
+                        <ul class="main-menu metismenu">
+                            <li><a href="app-inbox.html"><i class="icon-envelope"></i>Inbox App</a></li>
+                            <li><a href="app-chat.html"><i class="icon-bubbles"></i>Chat App</a></li>
+                        </ul>                        
+                    </nav>                    
+                </div>  
+                <div class="tab-pane animated fadeIn" id="setting">
+                    <div class="p-l-15 p-r-15">
+                        <h4>Choose Skin</h4>
+                        <ul class="choose-skin list-unstyled">
+                            <li data-theme="purple">
+                                <div class="purple"></div>
+                                <span>Purple</span>
+                            </li>                   
+                            <li data-theme="blue" class="active">
+                                <div class="blue"></div>
+                                <span>Blue</span>
+                            </li>
+                            <li data-theme="cyan">
+                                <div class="cyan"></div>
+                                <span>Cyan</span>
+                            </li>
+                            <li data-theme="green">
+                                <div class="green"></div>
+                                <span>Green</span>
+                            </li>
+                            <li data-theme="orange">
+                                <div class="orange"></div>
+                                <span>Orange</span>
+                            </li>
+                            <li data-theme="blush">
+                                <div class="blush"></div>
+                                <span>Blush</span>
+                            </li>
+                        </ul>
+                        <hr>
+                    </div>
+                </div>             
+            </div>          
+        </div>
+    </div>
+
+    <div id="main-content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-lg-6 col-md-8 col-sm-12">
+                        <h2><a href="javascript:void(0);" class="btn btn-xs btn-link btn-toggle-fullwidth"><i class="fa fa-arrow-left"></i></a>HRMS Gallery</h2>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="emp-attendance2.html"><i class="icon-home"></i></a></li>                            
+                            <li class="breadcrumb-item">Guest</li>
+                            <li class="breadcrumb-item active">HRMS Gallery</li>
+                        </ul>
+                    </div>            
+                    <div class="col-lg-6 col-md-4 col-sm-12 text-right">
+                        <!-- can add a column in a single row -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="card p-4">
+                        <div class="row no-gutters">
+                          <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                            <img src="../assets/images/Attendance.png" id="img-default" class="card-img shadow" alt="...">
+                          </div>
+                          <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                            <div class="card-body">
+                              <h5 class="card-title text-primary">Employee Attendance</h5>
+                              <p class="card-text"  style="text-align: justify; text-justify: inter-word;">
+                                Web based attendance is available at present and soon will be replaced by bio-metric or any other advanced technical systems will be placed. Branch wise, time wise attendance marking and tracking is applied in this page. <br>
+                                An employee can verify his attendance on day-wise, week-wise, month-wise and year-wise is allowed only for current year. <br>
+                                Overtime working hours tracking & management is facilitated.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="row no-gutters">
+                          <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                            <div class="card-body">
+                              <h5 class="card-title text-primary">View Roster</h5>
+                              <p class="card-text"  style="text-align: justify; text-justify: inter-word;">View Roster page is meant for knowing about employee job and working location with timings.</p>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                            <img src="../assets/images/View Roster.png" id="img-default" class="card-img shadow" alt="...">
+                          </div>
+                        </div>  
+                        <hr>
+                        <div class="row no-gutters">
+                            <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                              <img src="../assets/images/Apply-Leave.png" id="img-default" class="card-img shadow" alt="...">
+                            </div>
+                            <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                              <div class="card-body">
+                                <h5 class="card-title text-primary">Apply Leave</h5>
+                                <p class="card-text"  style="text-align: justify; text-justify: inter-word;">
+                                    All eligible leaves can be requested with Add Leave & withdraw buttons here. <br>
+                                    A mobile number is getting collected for emergency contacts.
+                                </p>
+                              </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row no-gutters">
+                          <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                            <div class="card-body">
+                              <h5 class="card-title text-primary">Claim Expenses</h5>
+                              <p class="card-text"  style="text-align: justify; text-justify: inter-word;">All staff who are eligible for expenses can submit requests with valid attachments. <br>
+                                Provision has provided to display “Claim Status”.</p>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                            <img src="../assets/images/Claim-Expenses.png" id="img-default" class="card-img shadow" alt="...">
+                          </div>
+                        </div> 
+                        <hr>
+                        <div class="row no-gutters">
+                            <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                              <img src="../assets/images/View-Events.png" id="img-default" class="card-img shadow" alt="...">
+                            </div>
+                            <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                              <div class="card-body">
+                                <h5 class="card-title text-primary">View Events</h5>
+                                <p class="card-text"  style="text-align: justify; text-justify: inter-word;">
+                                    All internal events which added by Admin can be seen in this page.
+                                </p>
+                              </div>
+                            </div>
+                        </div> 
+                        <hr>
+                        <div class="row no-gutters">
+                          <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                            <div class="card-body">
+                              <h5 class="card-title text-primary">View Holidays</h5>
+                              <p class="card-text"  style="text-align: justify; text-justify: inter-word;">Public and National Holidays list which are added from Admin side can view here in  date-wise.</p>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                            <img src="../assets/images/View-Holiday.png" id="img-default" class="card-img shadow" alt="...">
+                          </div>
+                        </div>   
+                        <hr>
+                        <div class="row no-gutters">
+                            <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                              <img src="../assets/images/View-Assets.png" id="img-default" class="card-img shadow" alt="...">
+                            </div>
+                            <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                              <div class="card-body">
+                                <h5 class="card-title text-primary">View Assets</h5>
+                                <p class="card-text"  style="text-align: justify; text-justify: inter-word;">
+                                    Any asset(Laptop, tablet, Mobile., etc.,) issued by company to employee can be tracked here.
+                                </p>
+                              </div>
+                            </div>
+                        </div>  
+                        <hr>
+                        <div class="row no-gutters">
+                          <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                            <div class="card-body">
+                              <h5 class="card-title text-primary">Attendance Monitoring</h5>
+                              <p class="card-text"  style="text-align: justify; text-justify: inter-word;">Higher Officials is allowed to monitor the attendance of his branch and ratify or verify it. He is allowed to view the scheduled timings against punch-in punch-out timings of employees.</p>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                            <img src="../assets/images/Attend-Monitoring.png" id="img-default" class="card-img shadow" alt="...">
+                          </div>
+                        </div>  
+                        <hr>
+                        <div class="row no-gutters">
+                            <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                              <img src="../assets/images/add-events.png" id="img-default" class="card-img shadow" alt="...">
+                            </div>
+                            <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                              <div class="card-body">
+                                <h5 class="card-title text-primary">Add Events</h5>
+                                <p class="card-text"  style="text-align: justify; text-justify: inter-word;">
+                                    Admin was authorized to create events that are going to be shared to all or intended staff.
+                                </p>
+                              </div>
+                            </div>
+                        </div>   
+                        <hr>
+                        <div class="row no-gutters">
+                          <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                            <div class="card-body">
+                              <h5 class="card-title text-primary">Employee Profile</h5>
+                              <p class="card-text"  style="text-align: justify; text-justify: inter-word;">This page includes Employee Profile, WordPad, FAQ's, Submit employee details and Preview tabs.</p>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                            <img src="../assets/images/profile.png" id="img-default" class="card-img shadow" alt="...">
+                          </div>
+                        </div>   
+                        <hr>
+                        <div class="row no-gutters">
+                            <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                              <img src="../assets/images/DayWiseRoster.png" id="img-default" class="card-img shadow" alt="...">
+                            </div>
+                            <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                              <div class="card-body">
+                                <h5 class="card-title text-primary">Add Day Wise Roster</h5>
+                                <p class="card-text"  style="text-align: justify; text-justify: inter-word;">Branch head or any person who is in equal or higher capacity only be allowed to prepare this table. <br>
+                                  Key-in employee details to the table, right from empID, name, Date, Shifts, in-time and out-time are allowed to mark and ratify the said table.</p>
+                              </div>
+                            </div>
+                        </div>  
+                        <hr>
+                        <div class="row no-gutters">
+                          <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                            <div class="card-body">
+                              <h5 class="card-title text-primary">Week Wise Roster</h5>
+                              <p class="card-text"  style="text-align: justify; text-justify: inter-word;">A cumulative statement comprising of all staff members of branch whose attendance schedules ‘for a week’ can be viewed here.</p>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                            <img src="../assets/images/WeekWiseRoster.png" id="img-default" class="card-img shadow" alt="...">
+                          </div>
+                        </div>  
+                        <hr>
+                        <div class="row no-gutters">
+                            <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                              <img src="../assets/images/MonthWiseRoster.png" id="img-default" class="card-img shadow" alt="...">
+                            </div>
+                            <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                              <div class="card-body">
+                                <h5 class="card-title text-primary">Month Wise Roster</h5>
+                                <p class="card-text"  style="text-align: justify; text-justify: inter-word;">
+                                    A cumulative statement comprising of all staff members of branch whose attendance ‘for a month’ can be viewed here.
+                                </p>
+                              </div>
+                            </div>
+                        </div>                
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+
+<button style="font-size: 30px;" class="btn btn-danger px-4" onclick="topFunction()" id="myBtn" title="Go to top"><i class="bi bi-arrow-up-square-fill"></i></button>
+
+<script type="text/javascript" src="./assets/js/zooming.min.js"></script>
+
+<!-- Javascript -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-
+ui.min.js"></script>
+
+<script type="text/javascript" language="javascript">
+   
+//  Image Zoom effect
+  const defaultZooming = new Zooming()
+  const customZooming = new Zooming()
+  const config = customZooming.config()
+  const TRANSITION_DURATION_DEFAULT = config.transitionDuration
+  const BG_COLOR_DEFAULT = config.bgColor
+  const SCALE_BASE_DEFAULT = config.scaleBase
+  const ACTIVE_CLASS = 'button-primary'
+
+  const btnFast = document.getElementById('btn-fast')
+  const btnDark = document.getElementById('btn-dark')
+  const btnScaleSmall = document.getElementById('btn-scale-small')
+
+  document.addEventListener('DOMContentLoaded', function () {
+    defaultZooming.listen('#img-default')
+    customZooming.listen('#img-custom')
+  })
+// image zoom effect ends
+     
+  
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+  
+</script>
+
+
+<script src="assets/bundles/libscripts.bundle.js"></script>    
+<script src="assets/bundles/vendorscripts.bundle.js"></script>
+
+<script src="assets/bundles/datatablescripts.bundle.js"></script>
+<script src="../assets/vendor/sweetalert/sweetalert.min.js"></script> <!-- SweetAlert Plugin Js --> 
+<script src="../assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script><!-- bootstrap datepicker Plugin Js --> 
+
+<script src="assets/bundles/mainscripts.bundle.js"></script>
+<script src="assets/js/pages/tables/jquery-datatable.js"></script>
+<script src="assets/js/pages/ui/dialogs.js"></script>
+</body>
+</html>
