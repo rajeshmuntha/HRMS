@@ -53,7 +53,7 @@
 } 
 
 .bg-img{
-    background-image: url('./assets/images/texture-background.jpg ');
+    background-image: url('../assets/images/texture-background.jpg ');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
